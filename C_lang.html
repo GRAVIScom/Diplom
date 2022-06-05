@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Конвертор внутренних С# типов данных</title>
+
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <a class="logo" href="index.html">
+            Конвертер
+        </a>
+        <div class="main-title">
+            <h2 class="main-title-item">
+                <a href="tables.html" class="main-title-item-link">Кодировочные таблицы</a>
+            </h2>
+        </div>
+        <div class="callback">
+            <a href="callback.html" class="callback-link">Обратная связь</a>
+        </div>
+    </header>
+
+    <div class="title">
+        <h2 class="C_lang-title">С#</h2>
+    </div>
+    <div class="title-lang">
+        <div class="subtitle">
+            <h3>Целочисленные типы</h3>
+        </div>
+        <div class="subtitle --flex">
+            <h3>Вещественные типы</h3>
+        </div>
+    </div>
+    <form action="#" method="POST" class="form-C_lang">
+        <div class="container-block">
+            <div class="container-block-item">
+                <h4 class="container-block-item-title">Режим</h4>
+                <div class="container-block-inputs">
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input" name="radio-input-1">
+                        <label for="radio-input" class="input-box">Обучение</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-2" name="radio-input-1">
+                        <label for="radio-input-2" class="input-box">Контроль</label>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block-item">
+                <h4 class="container-block-item-title">Знаковые</h4>
+                <div class="container-block-inputs">
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-3" name="radio-input">
+                        <label for="radio-input-3" class="input-box">Sbyte</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-4" name="radio-input">
+                        <label for="radio-input-4" class="input-box">Short</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-5" name="radio-input">
+                        <label for="radio-input-5" class="input-box">int</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-6" name="radio-input">
+                        <label for="radio-input-6" class="input-box">long</label>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block-item">
+                <h4 class="container-block-item-title">С плавающей точкой</h4>
+                <div class="container-block-inputs">
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-7" name="radio-input">
+                        <label for="radio-input-7" class="input-box">float</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-8" name="radio-input">
+                        <label for="radio-input-8" class="input-box">double</label>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block-item">
+                <h4 class="container-block-item-title">Символьный тип</h4>
+                <div class="container-block-inputs">
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-9" name="radio-input">
+                        <label for="radio-input-9" class="input-box">char</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-block">
+            <div class="container-block-item container-block-item-input"> 
+                <div class="error-message" id="error-message">
+                    Выберите тип данных
+                </div>
+                <div class="error-message-3 error-message" id="error-message-3">
+                    Неверно, попробуйте еще раз
+                </div>
+                <div class="error-message-2 error-message" id="error-message-char-one">
+                    В типе данных char может быть только один символ
+                </div>
+                <div class="success" id="success">
+                   верно
+                </div>
+                <div class="sByte error-message" id="sByte-message">
+                    Выбирите значения от -128 до 127
+                 </div>
+                 <div class="short error-message" id="short-message">
+                    Выбирите значения от -32768 до 32767
+                 </div>
+                 <div class="int error-message" id="int-message">
+                    Выбирите значения от -2147483647 до 2147483647
+                 </div>
+                 <div class="long error-message" id="long-message">
+                    Число должно быть целым. Повторите попытку
+                 </div>
+                 <div class="byte error-message" id="byte-message">
+                    Выбирите значение от 0 до 255
+                 </div>
+                 <div class="ushort error-message" id="ushort-message">
+                    Выбирите значение от 0 до 65535
+                 </div>
+                 <div class="float error-message" id="float-message">
+                   Введино число неверно. Попробуйте еще раз
+                 </div>
+                 <div class="decimal error-message" id="decimal-message">
+                    Введино число неверно. Попробуйте еще раз
+                  </div>
+                 <div class="container-block-inputs fix">
+                    <input type="text" placeholder="Ввод" class="container-block-input-2" id="enter">
+                    <button class="container-block-btn" id="btn" type="button">Перевод</button>
+                    <button class="container-block-btn btn-none" id="btn-2" type="button">Сгенерировать</button>
+               </div>
+            </div>
+            
+            <div class="container-block-item">
+                <h4 class="container-block-item-title">Безнаковые</h4>
+                <div class="container-block-inputs">
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-10" name="radio-input">
+                        <label for="radio-input-10" class="input-box">byte</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-11" name="radio-input">
+                        <label for="radio-input-11" class="input-box">ushort</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-12" name="radio-input">
+                        <label for="radio-input-12" class="input-box">uint</label>
+                    </div>
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-13" name="radio-input">
+                        <label for="radio-input-13" class="input-box">ulong</label>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block-item">
+                <h4 class="container-block-item-title">С фиксированной точкой</h4>
+                <div class="container-block-inputs">
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-14" name="radio-input">
+                        <label for="radio-input-14" class="input-box">decimal</label>
+                    </div>
+                </div>
+            </div>
+            <div class="container-block-item">
+                <h4 class="container-block-item-title">Строковый тип</h4>
+                <div class="container-block-inputs">
+                    <div class="container-block-input">
+                        <input type="radio" class="container-block-input" id="radio-input-15" name="radio-input">
+                        <label for="radio-input-15" class="input-box">string</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title-input">
+            <h4>ДВОИЧНОЕ ПРЕДСТАВЛЕНИЕ</h4>
+        </div>
+        <div class="main-input">
+            <input type="text" id="binary">
+        </div>
+        <div class="title-input">
+            <h4>ШЕСТНАДЦАТЕРИЧНОЕ ПРЕДСТАВЛЕНИЕ</h4>
+        </div>
+        <div class="main-input">
+            <input type="text" id="hexadecimal">
+        </div>
+        <div class="btn-submit-form">
+            <button type="button" class="form-btn container-block-btn" id="btn-3">Проверить</button>
+        </div>
+    </form>
+   <div class="pascal-link">
+       <a href="Pascal_lang.html" class="pascal-link-item">PASCAL</a>
+   </div>
+</body>
+</html>
